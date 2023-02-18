@@ -1,21 +1,14 @@
 import { Router } from "express";
+import { signIn, signUp } from "../controllers/auth.controller";
+import { authValidation } from "../middlewares/authValidation.middlewares";
 
 const AuthRouter = Router();
 
-AuthRouter.post("/signup");
-AuthRouter.post("/signin");
+AuthRouter.post("/signup", authValidation, signUp);
+AuthRouter.post("/signin", authValidation, signIn);
 
 export default AuthRouter;
 
-// POST /signup
-/*
-{
-	email: "...",
-	name: "...",
-	image: "...",
-	password: "..."
-}
-*/
 
 //POST login
 /*

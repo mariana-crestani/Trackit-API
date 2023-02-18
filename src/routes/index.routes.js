@@ -6,9 +6,6 @@ import TodayRouter from "./today.routes.js";
 
 const route = Router();
 
-route.use(AuthRouter);
-route.use(HabitsRouter);
-route.use(TodayRouter);
-route.use(HistoricRouter);
+route.use(AuthRouter, HabitsRouter, TodayRouter, HistoricRouter);
 
 export default route;
